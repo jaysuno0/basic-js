@@ -1,4 +1,6 @@
 class VigenereCipheringMachine {
+  //GOT NO IDEA ABOUT THE LAST TEST IN THIS TASK
+  //I mean why the code can't pass it... :) broken head
   constructor (isReverse) {
     this.isReverse = isReverse ? true : false;
     this.alphabet = [...'abcdefghijklmnopqrstuvwxyz'.toUpperCase()];
@@ -45,7 +47,7 @@ class VigenereCipheringMachine {
         return char;
     });
 
-    return this.isReverse ? encrypted.join('').reverse() : encrypted.join('');
+    return this.isReverse ? encrypted.reverse().join('') : encrypted.join('');
   }
 
   decrypt(text, key) {
@@ -67,7 +69,7 @@ class VigenereCipheringMachine {
       return char;
     });
 
-    return this.isReverse ? decrypted.join('').reverse() : decrypted.join('');
+    return this.isReverse ? decrypted.reverse().join('') : decrypted.join('');
   }
 }
 

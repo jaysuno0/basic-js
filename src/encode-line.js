@@ -1,19 +1,16 @@
-const { NotImplementedError } = require('../extensions/index.js');
+function encodeLine(str) {
+  str = [...str];
+  
+  for (let i = str.length - 1; i >= 1; i--) {
+    if (str[i][0] === str[i - 1][0]) {
+      str[i - 1] += str[i];
+      str.splice(i, 1);
+    }
+  }
 
-/**
- * Given a string, return its encoding version.
- *
- * @param {String} str
- * @return {String}
- *
- * @example
- * For aabbbc should return 2a3bc
- *
- */
-function encodeLine(/* str */) {
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+  return str.map(char => char.length > 1 ? char.length + char[0] : char).join('');
 }
+
 
 module.exports = {
   encodeLine
